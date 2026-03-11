@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I'm Sorry ❤️</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:linear-gradient(135deg,#ffd6e0,#ffc2d1,#ffb3c6);
+overflow:hidden;
+text-align:center;
+}
+
+h1{
+color:#ff4d6d;
+font-size:40px;
+}
+
+h2{
+color:#ff4d6d;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+margin:10px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+}
+
+#no{
+background:white;
+color:#ff4d6d;
+}
+
+#message{
+display:none;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+margin-top:20px;
+max-width:300px;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+color:#ff4d6d;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>I'm Really Sorry 💔</h1>
+
+<h2>Will you forgive me? 🥺</h2>
+
+<div>
+<button id="yes" onclick="forgive()">YES ❤️</button>
+<button id="no" onmouseover="moveButton()">NO 😢</button>
+</div>
+
+<div id="message">
+
+<h2>Thank You My Love 💖</h2>
+
+<p>
+I promise I will do better and never hurt you again.  
+You mean everything to me.  
+
+Please forgive me.
+</p>
+
+<p><b>Forever Yours,<br>Mannat</b></p>
+
+</div>
+
+<script>
+
+function forgive(){
+document.getElementById("message").style.display="block";
+}
+
+function moveButton(){
+var button=document.getElementById("no");
+
+var x=Math.random()*window.innerWidth;
+var y=Math.random()*window.innerHeight;
+
+button.style.position="absolute";
+button.style.left=x+"px";
+button.style.top=y+"px";
+}
+
+function createHeart(){
+
+var heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
